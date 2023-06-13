@@ -50,10 +50,7 @@ void AppBalance::envoyerTCP(){
     qDebug() << "AppBalance: Déclenchement envoyerTCP()";
     QByteArray data="";
     data=maBalance->lirePoids();
-    //data.append('a');
-    ui->textEdit->setText(data);
-    //qDebug()<< "Poids + nom" + data+idCde;
-    //QByteArray poidsMesure= "{" + idCde + ":"+ data + "}";
+    ui->textEdit->setText("Poids envoyé : "+data+"g");
     QByteArray poidsMesure= data;
     monServeur.envoyer(poidsMesure);
     qDebug()<< "Poids envoyé= " << poidsMesure;
